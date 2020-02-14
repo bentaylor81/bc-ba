@@ -1,1 +1,1 @@
-web: gunicorn bcba.wsgi
+web:gunicorn bcba.wsgi
