@@ -1,0 +1,59 @@
+{% extends 'global/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Showcase Section -->
+<section id="page-showcase" class="grid">
+    <div class="bg-image"></div>
+    <div class="content-wrap">
+        <h1>Sponsorship</h1>
+    </div>
+</section>
+
+<!-- Our Story -->
+<section id="page-block">
+    <div class="card no-image">
+        <div class="card-content">
+            Increase your Corporate and Individual profile by partnering and supporting the BCBA.
+            <br /><br />
+            Through a variety of membership and event sponsorship opportunities, we can help you enhance your profile and presence in your business community both Corporately and Individually.
+        </div>
+    </div>
+</section>
+
+<!-- What we do -->
+<section id="page-block">
+    <h2>Sponsorship Opportunities</h2>
+    <div class="card no-image">
+        <div class="card-content">
+            Increase your profile and support the BC-BA through a variety of sponsorship opportunities.
+            <br /><br />
+            These include the following benefits:
+            <ul>
+                <li>
+                    Corporate logo posted on website, including a corporate overview on the BCBA Sponsor Links page
+                </li>
+                <li>
+                    2 company promotional communications (e-blasts) to the BCBA directory, as an “Approved Sponsor”. With the opportunity to purchase more if desired.
+                </li>
+                <li>
+                    Preferential Rates for events i.e. Christmas Lunch, Golf Tournament, breakfast/lunch meetings exclusively sponsored.
+                </li>
+                <li>
+                    High profile corporate identity exposure at sponsored events and selected national events
+                </li>
+                <li>
+                    Speaker opportunity at an event of your choice
+                </li>
+                <li>
+                    Event attendee and contact list for sponsored event
+                </li>
+                <li>
+                    Please contact us for sponsorship and event-specific pricing.
+                </li>
+            </ul>
+            <p>Please <a href="{% url 'contact' %}">contact us</a> for sponsorship and event-specific pricing.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

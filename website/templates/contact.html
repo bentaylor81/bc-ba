@@ -1,0 +1,83 @@
+{% extends 'global/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Showcase Section -->
+<section id="page-showcase" class="grid">
+    <div class="bg-image"></div>
+    <div class="content-wrap">
+        <h1>Contact the BC-BA</h1>
+    </div>
+</section>
+
+<!-- Contact Us -->
+<section id="page-block">
+    <div class="card no-image">
+        <div class="card-content">
+            To contact the BC-BA please use the form below:<br /><br />
+            <form class="contact-form" action="">
+                <div>
+                    First name *<br />
+                    <input type="text" name="firstname" value="">
+                </div>
+                <div>
+                    Last name *<br />
+                    <input type="text" name="lastname" value="">
+                </div>
+                <div>
+                    Company<br />
+                    <input type="text" name="company" value="">
+                </div>
+                <div>
+                    Position<br />
+                    <input type="text" name="position" value="">
+                </div>
+                <div>
+                    Address<br />
+                    <textarea name="message" rows="6" cols="35">
+                    
+                    </textarea>
+                </div>
+                <div>
+                    Zip / Postal Code<br />
+                    <input type="text" name="postcode" value="">
+                </div>
+                <div>
+                    Phone<br />
+                    <input type="text" name="phone" value="">
+                </div>
+                <div>
+                    Email *<br />
+                    <input type="text" name="email" value="">
+                </div>
+                <div>
+                    Website<br />
+                    <input type="text" name="websiteFax" value="">
+                </div>
+                <div>
+                    Membership Type *<br />
+                    <select name="membership-type">
+                        <option value="individual">Individual</option>
+                        <option value="senior">Senior</option>
+                        <option value="entrepreneur">Entrepreneur</option>
+                        <option value="corporate">Corporate</option>
+                    </select>
+                </div>
+                <div>
+                    Comments<br />
+                    <textarea name="comments" rows="6" cols="35">
+                    
+                    </textarea>
+                </div>
+                <div>
+                    &nbsp;
+                </div>
+                <div>
+                    <input class="button" type="submit" value="Submit">
+                </div>
+            </form> 
+
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% load static %}
+<!-- Top Header Section -->
+<header class="grid"> 
+    <div class="logo">
+        <a href="#"><img src="{% static 'img/logo.png' %}"></a>
+    </div>
+    <div class="social">
+        <a target="_blank" href="https://twitter.com/BritCdnBizAssoc"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a target="_blank" href="https://www.linkedin.com/company/british-canadian-business-association"><i class="fab fa-linkedin"></i></a>
+    </div>
+</header>
+
+<!-- Top Navigation Section -->
+<nav class="grid">
+    <div class="top-nav">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li class="dropdown">
+                <a class="dropbtn" href="{% url 'about' %}">About Us</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'who-are-we' %}">Who are we</a>
+                </div>	
+            </li>
+            <li><a href="{% url 'events' %}">Events</a></li>
+            <li class="dropdown">
+                <a class="dropbtn" href="{% url 'membership' %}">Membership</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'membership-types' %}">Membership Types</a>
+                    <a href="{% url 'member-directory' %}">Member Directory</a>
+                </div>	
+            </li>
+            <li class="dropdown">
+                <a class="dropbtn" href="{% url 'sponsorship' %}">Sponsorship</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'sponsors-current' %}">BC-BA Sponsors</a>
+                </div>	
+            </li>
+            <li><a href="{% url 'resources' %}">Resources</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+    </div>
+</nav>

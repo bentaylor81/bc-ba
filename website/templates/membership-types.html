@@ -1,0 +1,66 @@
+{% extends 'global/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Showcase Section -->
+<section id="page-showcase" class="grid">
+    <div class="bg-image"></div>
+    <div class="content-wrap">
+        <h1>Membership Types</h1>
+    </div>
+</section>
+
+<!-- Individual Membership -->
+<section id="page-block">
+    <h2>Individual Membership</h2>
+    <div class="card">
+        <div class="card-content">
+            <h3>Personal</h3>
+            <ul>
+                <li>Suitable for individuals who are seeking access to all BC-BA networks, benefits and events. Includes a personal listing in the members directory. Not transferable.</li>
+                <li><b>$150.00</b> – Plus GST - <a href="{% url 'membership' %}">Apply Here</a></li>
+            </ul>
+            <h3>Entrepreneurs</h3>
+            <ul>
+                <li>For privately owned business with fewer than 10 employees and/or sales of less than $1,000,000. Membership admits 3 person with full member listing. Not transferable.</li>
+            </ul>
+            <br />
+            <p><b>Memberships includes the following benefits:</b></p>
+            <ul>
+                <li>3 national representatives free-entry to all networking events</li>
+                <li>Will be provided the opportunity, at reasonable cost, for short presentation at breakfast events</li>
+                <li>Will be listed in the Membership Directory</li>
+                <li>Active introduction to networked chambers/business associations as required</li>
+                <li>Preferential member benefits program</li>
+                <li>Option to purchase bi-monthly updated attendance lists from all networking events</li>
+                <li>Preferential rates for commercial exposure at annual events i.e. Christmas Lunch, Golf Tournament, breakfast/lunch meetings</li>
+                <li>Exclusive event sponsorship opportunities</li>
+                <li><b>$375.00</b> – Plus GST  - <a href="{% url 'membership' %}">Apply Here</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Corporate Membership -->
+<section id="page-block">
+    <h2>Corporate Membership</h2>
+    <div class="card no-image">
+        <div class="card-content">
+            Includes the following benefits:
+            <ul>
+                <li>6 national representatives free-entry to all networking events</li>
+                <li>Will be provided the opportunity, at reasonable cost, for short presentation at a breakfast events</li>
+                <li>Will be listed in the Membership Directory</li>
+                <li>Active introduction to networked chambers/business associations as required</li>
+                <li>Preferential member benefits program</li>
+                <li>Bi-monthly updated attendance lists from all networking events at no charge</li>
+                <li>Preferential rates for commercial exposure at annual events i.e. Christmas Lunch, Golf Tournament, breakfast/lunch meetings</li>
+                <li>Exclusive event sponsorship opportunities</li>
+                <li><b>$750.00</b> – Plus GST  - <a href="{% url 'membership' %}">Apply Here</a></li>
+            </ul>
+            <br />
+            <p>Please note: Cost of annual membership is in Canadian funds.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
