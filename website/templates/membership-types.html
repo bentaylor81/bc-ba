@@ -2,20 +2,20 @@
 {% load static %}
 
 {% block content %}
+
 <!-- Showcase Section -->
-<section id="page-showcase" class="grid">
-    <div class="bg-image"></div>
-    <div class="content-wrap">
-        <h1>Membership Types</h1>
+<section class="grid">
+    <div id="page-showcase">
+        <h1>BC-BA Membership Types</h1>
     </div>
 </section>
 
 <!-- Individual Membership -->
-<section id="page-block">
-    <h2>Individual Membership</h2>
-    <div class="card">
-        <div class="card-content">
-            <h3>Personal</h3>
+<section class="grid">
+    <div>
+        <h2>Individual Membership</h2>
+        <div class="content">
+                <h3>Personal</h3>
             <ul>
                 <li>Suitable for individuals who are seeking access to all BC-BA networks, benefits and events. Includes a personal listing in the members directory. Not transferable.</li>
                 <li><b>$150.00</b> – Plus GST - <a href="{% url 'membership' %}">Apply Here</a></li>
@@ -42,10 +42,10 @@
 </section>
 
 <!-- Corporate Membership -->
-<section id="page-block">
-    <h2>Corporate Membership</h2>
-    <div class="card no-image">
-        <div class="card-content">
+<section class="grid">
+    <div>
+        <h2>Corporate Membership</h2>
+        <div class="content">
             Includes the following benefits:
             <ul>
                 <li>6 national representatives free-entry to all networking events</li>
