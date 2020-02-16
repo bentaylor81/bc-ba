@@ -39,8 +39,8 @@ nav { background-color: #ddd; }
 .dropdown-content a:hover {	background-color: #ddd; border-radius: 0px 0px 10px 10px; }
 .dropdown:hover .dropdown-content {	display: block;}
 
-/* Home - Showcase, Page Showcase */
-#showcase {	display: block; grid-column: 1/4; text-align: center; height: 450px; margin-bottom: 30px; background: url('../img/showcase.jpg') no-repeat 0% 50%; background-size: cover; width: 100%; color: #fff; }
+/* Home - Showcase */
+#showcase { display: block; grid-column: 1/4; text-align: center; height: 450px; margin-bottom: 30px; background: url('../img/showcase.jpg') no-repeat 0% 50%; background-size: cover; width: 100%; color: #fff; }
 #showcase h1 { font-size: 55px; margin-bottom: 0.2rem; padding-top: 3rem; }
 #showcase p { font-size: 28px; font-weight: bold; padding: 20px; }
 
