@@ -3,55 +3,54 @@
 
 {% block content %}
 <!-- Showcase Section -->
-<section id="showcase" class="grid">
-	<div class="bg-image"></div>
-	<div class="content-wrap">
+<section class="grid">
+	<div id="showcase">
 		<h1>Promote, Connect and Support</h1>
 		<p>Welcome to the British Canadian Business Association</p>
-		<a href="{% url 'about' %}" class="btn">Read More</a>
+		<p><a href="{% url 'about' %}" class="btn">Read More</a></p>
 	</div>
 </section>
 
-<!-- About US Section -->
-<section id="about-home">
-	<h2>British Canadian Business Association</h2>
-	<div class="card box-1">
-		<img src="{% static 'img/about-1.jpg' %}" alt="">
-		<div class="card-content">
-			<h3 class="card-title">Promote and Support</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, blanditiis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, asperiores.</p>
+<!-- Home - About US Section -->
+<section class="grid">
+	<div id="home-about">
+		<h2>British Canadian Business Association</h2>
+		<div class="card">
+			<img src="{% static 'img/about-1.jpg' %}" alt="">
+			<div class="card-content">
+				<h3 class="card-title">Promote and Support</h3>
+				<p>Promote and support the development of trade, commerce and investment between UK and Canada.</p>
+			</div>
 		</div>
-	</div>
-	<div class="card">
-		<img src="{% static 'img/about-2.jpg' %}" alt="">
-		<div class="card-content">
-			<h3 class="card-title">Increase Opprtunities</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, blanditiis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, asperiores.</p>
+		<div class="card">
+			<img src="{% static 'img/about-2.jpg' %}" alt="">
+			<div class="card-content">
+				<h3 class="card-title">Increase Opprtunities</h3>
+				<p>Aligning companies through BCBA partners, associations, businesses and government relationships.</p>
+			</div>
 		</div>
-	</div>
-	<div class="card">
-		<img src="{% static 'img/about-3.jpg' %}" alt="">
-		<div class="card-content">
-			<h3 class="card-title">Leverage Relationships</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, blanditiis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, asperiores.</p>
+		<div class="card">
+			<img src="{% static 'img/about-3.jpg' %}" alt="">
+			<div class="card-content">
+				<h3 class="card-title">Leverage Relationships</h3>
+				<p>Build future relationships in both Canada and the United Kingdom to support business growth.</p>
+			</div>
 		</div>
-	</div>
-	<div class="card">
-		<img src="{% static 'img/about-4.jpg' %}" alt="">
-		<div class="card-content">
-			<h3 class="card-title">Connect Business Owners</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, blanditiis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, asperiores.</p>
+		<div class="card">
+			<img src="{% static 'img/about-4.jpg' %}" alt="">
+			<div class="card-content">
+				<h3 class="card-title">Connect Business Owners</h3>
+				<p>Routinely bring together business owners to explore the opportunities and synergies between them.</p>
+			</div>
 		</div>
 	</div>
 </section>
 
-<!-- Sponsors Section -->
-<section id="sponsor">
-	<div class="sponsor-header">
-		<h2>Key Sponsors</h2>
-	</div>
-	<div class="sponsor-block">
-		<div class="sponsor-logos">
+<!-- Home - Sponsors Section -->
+<section class="grid" id="sponsors-bg">
+	<div id="sponsors-home">
+		<h3>Key Sponsors</h3>
+		<div class="logos">
 			<a href="#"><img class="img-1" src="{% static 'img/sponsors/air-canada.png' %}" alt=""></a>
 			<a href="#"><img src="{% static 'img/sponsors/assante.jpg' %}" alt=""></a>
 			<a href="#"><img src="{% static 'img/sponsors/bdo.jpg' %}" alt=""></a>
@@ -66,16 +65,18 @@
 </section>
 
 <!-- Our Story Section -->
-<section id="our-story">
-	<h2>Our Story</h2>
-	<div class="card">
-		<img src="{% static 'img/about-us.jpg' %}" alt="">
-		<div class="card-content">
-			<p>The British Canadian Business Association was created with the ultimate goal of 'giving back' to the business communities in the UK and Canada.</p>
-
-			<p>Having experienced firsthand the challenge of making professional and personal relocations work, our directors recognized the need for a dynamic and well organized resource dedicated to providing businesses with the promotion, connection and support they need.</p>
-
-			<p>Today, the BCBA supports companies and individuals on both sides of the Atlantic, openly sharing our network and expertise with likeminded organizations to simplify the process and increase the chances of commercial and personal success.</p>
+<section class="grid">
+	<div id="home-story">
+		<h2>Our Story</h2>
+		<div class="card">
+			<img src="{% static 'img/about-us.jpg' %}" alt="">
+			<div class="card-content">
+				The British Canadian Business Association was created with the ultimate goal of 'giving back' to the business communities in the UK and Canada.
+				<br /><br />
+				Having experienced firsthand the challenge of making professional and personal relocations work, our directors recognized the need for a dynamic and well organized resource dedicated to providing businesses with the support they need.
+				<br /><br />
+				Today, the BCBA supports companies and individuals on both sides of the Atlantic, openly sharing our network and expertise with likeminded organizations to simplify the process and increase the chances of success.
+			</div>
 		</div>
 	</div>
 </section>
