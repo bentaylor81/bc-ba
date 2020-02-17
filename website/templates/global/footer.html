@@ -1,26 +1,29 @@
 {% load static %}
 
 <!-- Footer Section -->
-<footer>	
-	<div class="footer-linkedin">
-		<h3>BC-BA on Linked-In</h3>
-		<div>
-			<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="ben-taylor-0a03153"><a class="LI-simple-link" href='https://uk.linkedin.com/in/ben-taylor-0a03153?trk=profile-badge'>Ben Taylor</a></div>
+<footer class="grid">	
+	<div id="footer">
+		<div class="footer-linkedin">
+			<h3>BC-BA on Linked-In</h3>
+			<div>
+				<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="ben-taylor-0a03153"><a class="LI-simple-link" href='https://uk.linkedin.com/in/ben-taylor-0a03153?trk=profile-badge'>Ben Taylor</a></div>
+			</div>
 		</div>
-	</div>
-	<div>
-		<h3>BC-BA on Twitter</h3>
-		<div class="twitter-box">
-			<a class="twitter-timeline" data-lang="en" data-height="240" data-theme="dark" data-link-color="#504e88" href="https://twitter.com/BritCdnBizAssoc?ref_src=twsrc%5Etfw">Tweets by BritCdnBizAssoc</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>pt>
-		</div>
-	</div>
-	<div class="footer-contact">
-		<h3>Contact Us</h3>
 		<div>
-			<p>If you would like to contact the BC-BA please complete the form on the contact page.</p>
-			<p><a href="{% url 'contact' %}" class="btn">Contact us</a></p>
-			<p>Copyright &copy; British Canadian Business Association 2019</p>
-				
+			<h3>BC-BA on Twitter</h3>
+			<div class="twitter-box">
+				<a class="twitter-timeline" data-lang="en" data-height="240" data-theme="dark" data-link-color="#504e88" href="https://twitter.com/BritCdnBizAssoc?ref_src=twsrc%5Etfw">Tweets by BritCdnBizAssoc</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>pt>
+			</div>
+		</div>
+		<div class="footer-contact">
+			<h3>Contact Us</h3>
+			<div>
+				If you would like to contact the BC-BA please complete the form on the contact page.
+				<br /><br />
+				<a href="{% url 'contact' %}" class="btn">Contact us</a>
+				<br /><br />
+				Copyright &copy; British Canadian Business Association 2019		
+			</div>
 		</div>
 	</div>
 </footer>
