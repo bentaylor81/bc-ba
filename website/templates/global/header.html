@@ -26,7 +26,7 @@
             <li class="dropdown">
                 <a class="dropbtn" href="{% url 'about' %}">About Us</a>
                 <div class="dropdown-content">
-                    <a href="{% url 'who-are-we' %}">Who are we</a>
+                    <a class="last" href="{% url 'who-are-we' %}">Who are we</a>
                 </div>	
             </li>
             <li><a href="{% url 'events' %}">Events</a></li>
@@ -34,17 +34,17 @@
                 <a class="dropbtn" href="{% url 'membership' %}">Membership</a>
                 <div class="dropdown-content">
                     <a href="{% url 'membership-types' %}">Membership Types</a>
-                    <a href="{% url 'member-directory' %}">Member Directory</a>
+                    <a class="last" href="{% url 'member-directory' %}">Member Directory</a>
                 </div>	
             </li>
             <li class="dropdown">
                 <a class="dropbtn" href="{% url 'sponsorship' %}">Sponsorship</a>
                 <div class="dropdown-content">
-                    <a href="{% url 'sponsors-current' %}">BC-BA Sponsors</a>
+                    <a class="last" href="{% url 'sponsors-current' %}">BC-BA Sponsors</a>
                 </div>	
             </li>
             <li><a href="{% url 'resources' %}">Resources</a></li>
-            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <li><a class="last" href="{% url 'contact' %}">Contact Us</a></li>
         </ul>
     </div>
 </nav>

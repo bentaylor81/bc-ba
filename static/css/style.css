@@ -32,7 +32,8 @@ nav .top-nav li > a:hover { background: #ccc; }
 nav .dropdown {	position: relative;	display: inline-block; }
 nav .dropdown-content {	display: none; position: absolute; background-color: #f1f1f1; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4); z-index: 1; border-radius: 0px 0px 8px 8px; }
 nav .dropdown-content a { padding: 0px 20px; display: block; }
-nav .dropdown-content a:hover {	background-color: #ddd; border-radius: 0px 0px 10px 10px; }
+nav .dropdown-content a:hover {	background-color: #ddd; }
+nav .dropdown-content a:hover.last { border-radius: 0px 0px 8px 8px; }
 nav .dropdown:hover .dropdown-content {	display: block;}
 nav.mobile-menu { display: none; background: #ddd; width: 100%; }
 nav.mobile-menu a { display: block; padding: 10px 20px; color: #444;}
@@ -133,6 +134,6 @@ footer .footer-contact > div { color: #fff; background: #2f3336; padding: 8px 20
 	#home-about h2 { margin-bottom: 20px; }
 	#home-about .card { margin-bottom: 20px; }
 	#sponsors-home .logos { grid-template-columns: 1fr 1fr 1fr;}
-	#who-are-we img { width: 100%; margin-bottom: 20px; }
+	#who-are-we img, #about-story img { width: 100%; margin-bottom: 20px; }
 }
 
