@@ -4,7 +4,7 @@
 <header class="grid"> 
     <div class="header">
         <div class="logo">
-            <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}"></a>
+           <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}"></a>
         </div>
         <div class="social">
             <a target="_blank" href="https://twitter.com/BritCdnBizAssoc"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -24,27 +24,27 @@
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
             <li class="dropdown">
-                <a class="dropbtn" href="{% url 'about' %}">About Us</a>
+                <a class="dropbtn" href="/about">About Us</a>
                 <div class="dropdown-content">
                     <a class="last" href="{% url 'who-are-we' %}">Who are we</a>
                 </div>	
             </li>
-            <li><a href="{% url 'events' %}">Events</a></li>
+            <li><a href="/events">Events</a></li>
             <li class="dropdown">
-                <a class="dropbtn" href="{% url 'membership' %}">Membership</a>
+                <a class="dropbtn" href="/membership">Membership</a>
                 <div class="dropdown-content">
-                    <a href="{% url 'membership-types' %}">Membership Types</a>
+                    <a href="/membership-types">Membership Types</a>
                     <a class="last" href="{% url 'member-directory' %}">Member Directory</a>
                 </div>	
             </li>
             <li class="dropdown">
-                <a class="dropbtn" href="{% url 'sponsorship' %}">Sponsorship</a>
+                <a class="dropbtn" href="/sponsorship">Sponsorship</a>
                 <div class="dropdown-content">
-                    <a class="last" href="{% url 'sponsors-current' %}">BC-BA Sponsors</a>
+                    <a class="last" href="{% url 'current-sponsors' %}">BC-BA Sponsors</a>
                 </div>	
             </li>
             <li><a href="{% url 'resources' %}">Resources</a></li>
-            <li><a class="last" href="{% url 'contact' %}">Contact Us</a></li>
+            <li><a class="last" href="/contact">Contact Us</a></li>
         </ul>
     </div>
 </nav>
@@ -53,15 +53,15 @@
 <nav class="mobile-menu">
     <div id="menu">
         <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'about' %}">About Us</a>
+        <a href="/about">About Us</a>
         <a href="{% url 'who-are-we' %}">Who are we</a>
-        <a href="{% url 'events' %}">Events</a>
-        <a href="{% url 'membership' %}">Membership</a>
-        <a href="{% url 'membership-types' %}">Membership Types</a>
+        <a href="/events">Events</a>
+        <a href="/membership">Membership</a>
+        <a href="/membership-types">Membership Types</a>
         <a href="{% url 'member-directory' %}">Member Directory</a>
-        <a href="{% url 'sponsorship' %}">Sponsorship</a>
-        <a href="{% url 'sponsors-current' %}">BC-BA Sponsors</a>
+        <a href="/sponsorship">Sponsorship</a>
+        <a href="{% url 'current-sponsors' %}">BC-BA Sponsors</a>
         <a href="{% url 'resources' %}">Resources</a>
-        <a href="{% url 'contact' %}">Contact Us</a>
+        <a href="/contact">Contact Us</a>
     </div>
 </nav>

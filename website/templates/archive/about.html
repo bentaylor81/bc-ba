@@ -1,0 +1,61 @@
+{% extends 'global/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Showcase Section -->
+<section class="grid">
+    <div id="page-showcase">
+        <h1>About the BC-BA</h1>
+    </div>
+</section>
+
+<!-- Our Story -->
+<section class="grid">
+    <div id="about-story">
+        <h2>Our Story</h2>
+        <div class="card">
+            <img src="{% static 'img/about-us.jpg' %}" alt="">
+            <div class="card-content">
+                The British Canadian Business Association was created with the ultimate goal of 'giving back' to the business communities in the UK and Canada.
+				<br /><br />
+				Having experienced firsthand the challenge of making professional and personal relocations work, our directors recognized the need for a dynamic and well organized resource dedicated to providing businesses with the support they need.
+				<br /><br />
+				Today, the BCBA supports companies and individuals on both sides of the Atlantic, openly sharing our network and expertise with likeminded organizations to simplify the process and increase the chances of success.
+	        </div>
+        </div>
+    </div>
+</section>
+
+<!-- What we do -->
+<section class="grid">
+    <div id="about-what-we-do">
+    <h2>What we do</h2>
+    <div class="content">
+        The BCBA provides a variety of support mechanisms for companies and individuals, we:
+        <br /><br />
+        <ul>
+            <li>
+                Promote and support the development of trade, commerce and investment between UK and Canada by pro-actively connecting businesses, associations, individuals and government agencies.
+            </li>
+            <li>
+                Provide our members with greater opportunities for success by aligning companies to the right resources through our partners, associations, businesses and government relationships.
+            </li>
+            <li>
+                Connect and provide support for individuals & companies investing in Canada and provide a gateway for Canadian organizations into the UK, EU and the rest of North America.
+            </li>
+            <li>
+                Advocate on behalf of our members on matters of trade, commerce, finance and industry.
+            </li>
+            <li>
+                Routinely bring together business owners to explore the opportunities and synergies between them.
+            </li>
+            <li>
+                Openly provide access to support services as well as connecting talented people.
+            </li>
+            <li>
+                Leverage current and future relationships in both Canada and the United Kingdom to support business growth, particularly on the West Coast of Canada.
+            </li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

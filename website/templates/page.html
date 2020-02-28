@@ -1,0 +1,23 @@
+{% extends 'global/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{{ ben }}
+{% for items in page_content %}
+<!-- Showcase Section -->
+<section class="grid">
+    <div id="page-showcase">
+        <h1>{{ items.header }}</h1>
+    </div>
+</section>
+
+
+<!-- Member Directory -->
+<section class="grid">
+    <div>
+        {{ items.content|safe}}
+    </div>
+</section>
+{% endfor %}
+{% endblock %}

@@ -40,12 +40,13 @@ nav.mobile-menu a { display: block; padding: 10px 20px; color: #444;}
 nav.mobile-menu a:hover { background: #ccc; }
 
 /* Footer */
-footer { background: #1b1b1e; }
+footer { background: #222; }
 footer #footer { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-column: 2/3; grid-gap: 40px; padding: 20px; }
 footer #footer > div { max-width: 400px; }
 footer #footer .footer-linkedin { margin-bottom: 30px; }
 footer h3 { color: #fff; }
 footer .footer-contact > div { color: #fff; background: #2f3336; padding: 8px 20px; border-radius: 3px }
+footer .copyright { color: #fff; grid-column: 3; text-align: right; }
 
 /* Page - Showcase */
 #page-showcase { grid-column: 1/4; text-align: center; height: 200px; margin-bottom: 20px; background: url('../img/showcase.jpg') no-repeat 0% 50%; background-size: cover; width: 100%; color: #fff; }
@@ -111,6 +112,7 @@ footer .footer-contact > div { color: #fff; background: #2f3336; padding: 8px 20
 	#home-about h2 { grid-column: 1/3; }
 	#home-about .card { margin-bottom: 20px; }
 	#current-sponsors { grid-template-columns: 1fr 1fr; }
+	footer .copyright { grid-column: 1; text-align: left;}
 }
 
 @media (max-width: 800px) {

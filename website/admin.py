@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import board_members, pages
 
-# Register your models here.
+admin.site.register(board_members)
+admin.site.register(pages)
+
+
