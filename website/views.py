@@ -14,7 +14,7 @@ def resources(request):
     return render(request, 'resources.html', {})
 
 def who_are_we(request):
-    context = board_members.objects.all()
+    context = board_members.objects.all().order_by('priority')
     return render(request, 'who-are-we.html', {
         'board_members': context
         })

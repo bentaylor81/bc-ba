@@ -30,15 +30,17 @@
 <section class="grid">
     <div id="meet-board">
         <h2>Meet the Board</h2>
-        {% for items in board_members %}
-        <div class="card">
-            <h3>{{ items.member_name }} | {{ items.position }}<a href="{{ items.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a></h3>
-            <img src="/static/img/board/{{ items.image_url }}" alt="">
-            <div class="card-content">
-                {{ items.profile|safe }}
+        {% if board_members %}
+            {% for items in board_members %}
+            <div class="card">
+                <h3>{{ items.member_name }} | {{ items.position }}<a href="{{ items.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a></h3>
+                <img src="/static/img/board/{{ items.image_url }}" alt="">
+                <div class="card-content">
+                    {{ items.profile|safe }}
+                </div>
             </div>
-        </div>
-        {% endfor %}   
+            {% endfor %}   
+        {% endif %}
     </div>
 </section>
 {% endblock %}
