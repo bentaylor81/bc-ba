@@ -9,6 +9,17 @@
     </div>
 </section>
 
+<!-- Messages Section -->
+<section class="grid">
+    {% if messages %}
+        {% for message in messages %}
+            <div>
+                <b>{{ message }}</b>
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
 <!-- Who are we Section -->
 <section class="grid">
     <div id="who-are-we">
@@ -37,6 +48,9 @@
                 <img src="/static/img/board/{{ items.image_url }}" alt="">
                 <div class="card-content">
                     {{ items.profile|safe }}
+                </div>
+                <div>
+                    <a href={% url 'edit-board-member' items.id %}>Edit</a>
                 </div>
             </div>
             {% endfor %}   
