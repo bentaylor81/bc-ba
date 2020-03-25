@@ -1,0 +1,62 @@
+{% extends 'app_admins/admin-base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Messages Section -->
+<section>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
+<!-- Edit Board Members Form Section-->
+<section>
+    <div class="content edit-board">
+        <h3>Edit Board Member</h3>
+        <div class="link">
+            <a href={% url 'all-board-member' %}><< Back</a><br />
+        </div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}    <!-- Security measure when adding forms in Django -->
+            <div>
+                Member Name: <br />
+                <input type="text" value="{{ get_board_member.member_name }}" name="member_name"><br />
+            </div>
+            <div>
+                Position: <br />
+                <input type="text" value="{{ get_board_member.position }}" name="position">
+            </div>
+            <div>
+                Profile: <br />
+                <textarea type="text" rows="12" cols="20" name="profile">{{ get_board_member.profile }}</textarea>
+            </div>
+            <div>
+                Linkedin: <br />
+                <input type="text" value="{{ get_board_member.linkedin }}" name="linkedin">
+            </div>
+            <div>
+                Profile Pic: <br />    
+                <img src="{{ get_board_member.profile_pic.url }}" /><br />
+                <input type="file" value="{{ get_board_member.profile_pic.url }}" name="profile_pic">
+            </div>
+            <div>            
+                Priority: <br />
+                <input type="text" value="{{ get_board_member.priority }}" name="priority">
+            </div>
+            <br />
+            <button type="submit">Save</button>
+        </form>
+        <br />
+        <form method="POST" action="/site-admin/board/delete/{{ get_board_member.id }}">
+            {% csrf_token %}
+            <input type="hidden" value="{{ get_board_member.id }}" name="id"> <!-- Not sure what this is for -->
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

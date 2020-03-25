@@ -1,0 +1,46 @@
+{% extends 'app_admins/admin-base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Messages Section -->
+<section>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
+<!-- Admin Board Members -->
+<section>
+    <div class="content">
+        <h3>Administer Board Members</h3>
+        <div class="link">
+            <a href={% url 'add-board-member' %}>+ Add Board Member</a><br />
+            <a href={% url 'who-are-we' %} target="_blank">+ View Board Members Page Live</a>
+        </div>
+        <table cellpadding="0" cellspacing="0">    
+            {% if board_members %}
+                <tr>
+                    <td class="head">Profile Picture</td>
+                    <td class="head">Member Name</td>
+                    <td class="head">Position</td>
+                    <td class="head">Ordering</td>
+                    <td class="head">Edit Board Member</td>
+                </tr>
+                {% for items in board_members %}
+                <tr>
+                    <td class="board"><img src="{{ items.profile_pic.url }}"></td>
+                    <td><b>{{ items.member_name }}</b></td>
+                    <td>{{ items.position }}</td>
+                    <td>{{ items.priority }}</td>
+                    <td><a href={% url 'edit-board-member' items.id %}>Edit</a></td>
+                </tr>
+                {% endfor %}   
+            {% endif %}
+        </table>
+    </div>
+</section>
+{% endblock %}

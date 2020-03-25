@@ -1,0 +1,47 @@
+{% extends 'app_admins/admin-base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Messages Section -->
+<section>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
+<!-- Admin Sponsors -->
+<section>
+    <div class="content">
+        <h3>Administer Pages</h3>
+        <table cellpadding="0" cellspacing="0">    
+            {% if all_pages %}
+            <tr>
+                <td class="head">Page Name</td> 
+                <td class="head">Header</td>
+                <td class="head">URL Path</td>
+                <td class="head">Date Edited</td> 
+                <td class="head">Actions</td>
+            </tr> 
+            {% for items in all_pages %}
+            <tr>
+                <td><b>{{ items.page_name }}</b></td>
+                <td>{{ items.header }}</td>
+                <td>{{ items.url_path }}</td>
+                <td>{{ items.date_added }}</td>
+                <td><a href={% url 'edit-page' items.id %}>Edit</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a target="_blank" href=/{{ items.url_path }}>View</a></td>
+            </tr>
+                {% endfor %}
+        </table>  
+        {% else %}
+            <div>
+                There are currently no pages
+            </div>            
+        {% endif %}            
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'website',
+    'app_websites',
+    'app_admins',
+    'app_contacts',
+    'app_users',
 ]
 
 MIDDLEWARE = [
@@ -81,29 +84,29 @@ WSGI_APPLICATION = 'bcba.wsgi.application'
 ### Comment out one of the below databases ###
 
 # Uses the LIVE DB Locally
-DATABASES = {
-    'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    }
-}
+#DATABASES = {
+ #   'default': {
+ #           'ENGINE': 'django.db.backends.postgresql_psycopg2',
+ #   }
+#}
 
 # This below only relates to local development and can be commented out when pushing to production.
-DATABASES['default'] = dj_database_url.config(default='postgres://tdekrodaycetkt:b79cc14eb1500dac8fd063291da7756127e33149fbb9cf3c0758c0faa869e664@ec2-18-213-176-229.compute-1.amazonaws.com:5432/de8545ja4u0a3d')
+#DATABASES['default'] = dj_database_url.config(default='postgres://tdekrodaycetkt:b79cc14eb1500dac8fd063291da7756127e33149fbb9cf3c0758c0faa869e664@ec2-18-213-176-229.compute-1.amazonaws.com:5432/de8545ja4u0a3d')
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+#db_from_env = dj_database_url.config(conn_max_age=600)
+#DATABASES['default'].update(db_from_env)
 
 # Uses the LOCAL DB Locally
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'bcba',
-#        'USER': 'postgres',
-#        'PASSWORD': 'Theturtle1$',
-#        'HOST': '127.0.0.1',
-#        'PORT': '5432',
-#    }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bcba',
+        'USER': 'postgres',
+        'PASSWORD': 'Theturtle1$',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
 
 
 # Password validation
@@ -150,3 +153,21 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
+
+# Media Files # 
+
+MEDIA_URL = '/images/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+# Sendgrid Settings
+
+SEND_GRID_API_KEY = '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'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'ben_taylor'
+EMAIL_HOST_PASSWORD = 'Theturtle1$'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'ben@gardentractorspares.co.uk'
+ACCOUNT_EMAIL_SUBJECT_PREFIX = 'Contact Email Message'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

@@ -1,0 +1,75 @@
+{% extends 'global/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Showcase Section -->
+<section class="grid">
+    <div id="page-showcase">
+        <h1>Contact the BC-BA</h1>
+    </div>
+</section>
+
+<!-- Messages Section -->
+<section class="grid">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+        </div>
+    {% endif %}
+</section>
+
+<!-- Contact Us -->
+<section class="grid">
+    <div id="contact" class="content">
+        To contact the BC-BA please use the form below:
+        <br /><br />
+        <form class="contact-form" method="post">
+            {% csrf_token %} 
+            <div>
+                Name *<br />
+                <input type="text" name="name" value="">
+            </div>
+            <div>
+                Email *<br />
+                <input type="text" name="email" value="">
+            </div>
+            <div>
+                Company<br />
+                <input type="text" name="company" value="">
+            </div>
+            <div>
+                Position<br />
+                <input type="text" name="position" value="">
+            </div>
+            <div>
+                Address<br />
+                <textarea name="address" rows="6" cols="35"></textarea>
+            </div>
+            <div>
+                Zip / Postal Code<br />
+                <input type="text" name="zip_code" value="">
+            </div>
+            <div>
+                Phone<br />
+                <input type="text" name="phone" value="">
+            </div>
+            <div>
+                Website<br />
+                <input type="text" name="website" value="">
+            </div>
+            <div>
+                Comments<br />
+                <textarea name="comments" rows="6" cols="35"></textarea>
+            </div>
+            <div class="submit">
+                <input class="button" type="submit" value="Submit">
+            </div>
+        </form> 
+    </div>
+</section>
+
+{% endblock %}

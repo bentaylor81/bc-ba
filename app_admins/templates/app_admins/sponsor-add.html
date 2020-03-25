@@ -1,0 +1,43 @@
+{% extends 'app_admins/admin-base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Messages Section -->
+<section>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
+<!-- Add Sponsor Form Section-->
+<section>
+    <div class="content">
+        <h3>Add Sponsor</h3>
+        <div class="link">
+            <a href={% url 'all-sponsor' %}><< Back</a><br />
+        </div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+                Sponsor Name: <br />
+                <input type="text" name="sponsor_name">
+            </div>
+            <div>
+                Sponsor Image: <br />
+                <input type="file" name="sponsor_logo">
+            </div>
+            <div>
+                Website: <br />
+                <input type="text" name="website">
+            </div>
+            <br />            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

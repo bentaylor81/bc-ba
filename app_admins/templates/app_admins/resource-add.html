@@ -1,0 +1,39 @@
+{% extends 'app_admins/admin-base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Messages Section -->
+<section>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
+<!-- Add Resource Form Section-->
+<section>
+    <div class="content">
+        <h3>Add Resource</h3>
+        <div class="link">
+            <a href={% url 'all-resource' %}><< Back</a><br />
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div>
+                Resource Name: <br />
+                <input type="text" name="resource_name">
+            </div>
+            <div>
+                Website: <br />
+                <input type="text" name="website">
+            </div>
+            <br />            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

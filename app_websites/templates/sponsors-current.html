@@ -1,0 +1,26 @@
+{% extends 'global/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Showcase Section -->
+<section class="grid">
+    <div id="page-showcase">
+        <h1>BC-BA Sponsors</h1>
+    </div>
+</section>
+
+<!-- Current Sponsors -->
+<section class="grid">
+    {% if sponsors %}
+    <div id="current-sponsors" class="content">
+        {% for item in sponsors %}
+        <div>
+            <h3>{{ item.sponsor_name }}</h3>
+            <a href="http://{{ item.website }}" target="_blank"><img src="{{ item.sponsor_logo.url }}" alt="{{ item.sponsor_name }} BCBA Sponsor Logo"></a>
+        </div>
+        {% endfor %}
+    {% endif %}
+    </div>
+</section>
+{% endblock %}

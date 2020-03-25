@@ -1,0 +1,38 @@
+{% extends 'app_admins/admin-base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Admin Contacts -->
+<section>
+    <div class="content">
+        <h3>Email Contacts</h3>
+        <table cellpadding="0" cellspacing="0">   
+            {% if all_contacts %}
+            <tr>
+                <td class="head">Date Sent</td>
+                <td class="head">Name</td>
+                <td class="head">Email</td>
+                <td class="head">Company</td>
+                <td class="head">Actions</td>
+            </tr>
+            {% for items in all_contacts %}           
+            <tr>
+                <td><b>{{ items.date_added }}</b></td>
+                <td>{{ items.name }}</td>
+                <td>{{ items.email }}</td>
+                <td>{{ items.company }}</td>
+                <td><a href={% url 'view-contact' items.id %}>View</a></td>                
+            </tr>
+            {% endfor %} 
+        </table>
+             
+            {% else %}
+            <div>
+                There are currently no contacts
+            </div>            
+            {% endif %}            
+        </div>
+    </div>
+</section>
+{% endblock %}

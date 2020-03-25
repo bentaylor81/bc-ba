@@ -1,0 +1,27 @@
+{% extends 'app_admins/admin-base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Admin Contacts -->
+<section>
+    <div class="content">
+        <h3>View Message</h3>
+        <div class="link">
+            <a href={% url 'contacts' %}><< Back</a><br />
+        </div>
+        <div class="contact">  
+            <span><b>Date Sent:</b> {{ view_contact.date_added }}</span><br />  
+            <span><b>Name:</b> {{ view_contact.name }}</span><br />
+            <span><b>Email:</b> {{ view_contact.email }}</span><br /> 
+            <span><b>Company:</b> {{ view_contact.company }}</span><br />
+            <span><b>Position:</b> {{ view_contact.position }}</span><br />
+            <span><b>Address:</b> {{ view_contact.address }}</span><br />
+            <span><b>Zip Code:</b> {{ view_contact.zip_code }}</span><br />
+            <span><b>Phone:</b> {{ view_contact.phone }}</span><br />
+            <span><b>Website:</b> {{ view_contact.website }}</span><br />
+            <span><b>Comments:</b> {{ view_contact.comments }}</span><br />
+        </div>
+    </div>
+</section>
+{% endblock %}

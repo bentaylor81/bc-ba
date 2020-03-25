@@ -1,0 +1,47 @@
+{% extends 'app_admins/admin-base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Messages Section -->
+<section>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
+<!-- Admin Resources -->
+<section>
+    <div class="content">
+        <h3>Administer Resources</h3>
+        <div class="link">
+            <a href={% url 'add-resource' %}>+ Add Resource</a><br />
+            <a href={% url 'resources' %} target="_blank">+ View Resources Live</a>
+        </div>
+        <table cellpadding="0" cellspacing="0">   
+            {% if resources %}
+            <tr>
+                <td class="head">Resource Name</span> 
+                <td class="head">Website </span>
+                <td class="head">Edit Resources</span>
+            </tr>
+            {% for items in resources %}
+            <tr>
+                <td>{{ items.resource_name }}</span>
+                <td>{{ items.website }}</span>
+                <td><a href={% url 'edit-resource' items.id %}>Edit</a></span>
+            </tr>
+            {% endfor %}   
+        </table>
+            {% else %}
+                <div>
+                    There are currently no resources
+                </div>            
+            {% endif %}            
+        </div>
+    </div>
+</section>
+{% endblock %}

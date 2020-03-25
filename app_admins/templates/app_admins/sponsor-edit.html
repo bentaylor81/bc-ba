@@ -1,0 +1,51 @@
+{% extends 'app_admins/admin-base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Messages Section -->
+<section>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
+<!-- Edit Sponsors Form Section-->
+<section>
+    <div class="content edit-sponsors">
+        <h3>Edit Sponsors</h3>
+        <div class="link">
+            <a href={% url 'all-sponsor' %}><< Back</a><br />
+        </div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %} 
+            <div>
+                Sponsor Name: <br />
+                <input type="text" value="{{ get_sponsor.sponsor_name }}" name="sponsor_name"><br />
+            </div>
+            <div>
+                Sponsor Logo: <br />    
+                <img src="{{ get_sponsor.sponsor_logo.url }}" /><br />
+                <input type="file" value="{{get_sponsor.sponsor_logo.url }}" name="sponsor_logo">
+            </div>
+            <div>
+                Website: <br />
+                <input type="text" value="{{ get_sponsor.website }}" name="website">
+            </div>
+            <br />
+            <button type="submit">Save</button>
+        </form>
+        <br />
+        <form method="POST" action="/site-admin/sponsor/delete/{{ get_sponsor.id }}">
+            {% csrf_token %}
+            <input type="hidden" value="{{ get_sponsor.id }}" name="id"> <!-- Not sure what this is for -->
+            <button type="submit">Delete</button>
+        </form>
+        
+    </div>
+</section>
+
+{% endblock %}

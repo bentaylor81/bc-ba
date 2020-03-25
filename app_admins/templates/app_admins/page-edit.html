@@ -1,0 +1,48 @@
+{% extends 'app_admins/admin-base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Messages Section -->
+<section>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
+<!-- Edit Sponsors Form Section-->
+<section>
+    <div class="content">
+        <h3>Edit Pages</h3>
+        <div class="link">
+            <a href={% url 'all-page' %}><< Back</a><br />
+        </div>
+        <form method="post">
+            {% csrf_token %} 
+            <div>
+                <b>Date Edited:</b> {{ get_page.date_edited }}
+            </div>
+            <div>
+                <b>Page Name:</b> {{ get_page.page_name }}
+            </div>
+            <div>
+                <b>URL:</b> <a target="_blank" href="http://localhost:8000/{{ get_page.url_path }}/">www.bcba.com/{{ get_page.url_path }}</a>
+            </div>
+            <div>
+                <b>Header:</b> {{ get_page.header }}
+            </div>
+            <div>
+                <b>Content:</b><br />
+                <textarea type="text" rows="30" cols="50" name="content">{{ get_page.content }}</textarea>
+            </div>
+            
+            <br />
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'app_admins/admin-base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Messages Section -->
+<section>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
+<!-- Add Board Members Form Section-->
+<section>
+    <div class="content">
+        <h3>Add Board Member</h3>
+        <div class="link">
+            <a href={% url 'all-board-member' %}><< Back</a><br />
+        </div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}    
+            <div>
+                Member Name: <br />
+                <input type="text" name="member_name">
+            </div>
+            <div>
+                Position: <br />
+                <input type="text" name="position">
+            </div>
+            <div>
+                Profile: <br />
+                <textarea type="text" rows="12" cols="20" name="profile"></textarea>
+            </div>
+            <div>
+                Linkedin: <br />
+                <input type="text" name="linkedin">
+            </div>
+            <div>
+                Profile Pic: <br />    
+                <input type="file" name="profile_pic">
+            </div>
+            <div>
+                Priority: <br />
+                <input type="text" name="priority">
+            </div>
+            <br />            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

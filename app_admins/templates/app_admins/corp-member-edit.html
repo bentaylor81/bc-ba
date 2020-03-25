@@ -1,0 +1,46 @@
+{% extends 'app_admins/admin-base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Messages Section -->
+<section>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
+<!-- Edit Corporate Members Form Section-->
+<section>
+    <div class="content">
+        <h3>Edit Corporate Member</h3>
+        <div class="link">
+            <a href={% url 'all-corp-member' %}><< Back</a><br />
+        </div>
+        <form method="post">
+            {% csrf_token %} 
+            <div>
+                Member Name: <br />
+                <input type="text" value="{{ get_corp_member.corp_member_name }}" name="corp_member_name"><br />
+            </div>
+            <div>
+                Website: <br />
+                <input type="text" value="{{ get_corp_member.website }}" name="website">
+            </div>
+            <br />
+            <button type="submit">Save</button>
+        </form>
+        <br />
+        <form method="POST" action="/site-admin/corporate-members/delete/{{ get_corp_member.id }}">
+            {% csrf_token %}
+            <input type="hidden" value="{{ get_corp_member.id }}" name="id"> <!-- Not sure what this is for -->
+            <button type="submit">Delete</button>
+        </form>
+        
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+You have received a message from the Website, here are the details:
+
+Name: {{ name }}
+Company: {{ company }}
+Position: {{ position }}
+Address: {{ address }}
+Zip Code: {{ zip_code }}
+Phone: {{ phone }}
+Email: {{ email }}
+Website: {{ website }}
+Comments: {{ comments }}

@@ -1,0 +1,44 @@
+{% extends 'global/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Showcase Section -->
+<section class="grid">
+    <div id="page-showcase">
+        <h1>Register with the BC-BA</h1>
+    </div>
+</section>
+
+<!-- Register Form -->
+<section class="grid full-height">  
+    <div id="register"> 
+        <h2>Registration</h2>
+        <div class="content">
+            <form method="POST" action="">
+                {% csrf_token %} 
+                <span class="label">Username:</span>
+                <span>{{ form.username }}</span>
+                <span class="label">{{ form.first_name.label }}:</span>
+                <span>{{ form.first_name }}</span>
+                <span class="label">{{ form.last_name.label }}:</span>
+                <span>{{ form.last_name }}</span>
+                <span class="label">Email address:</span>
+                <span>{{ form.email }}</span>
+                <span class="label">{{ form.password1.label }}:</span>
+                <span>{{ form.password1 }}</span>
+                <span class="label">{{ form.password2.label }}:</span>
+                <span>{{ form.password2 }}</span>
+                <input class="button" type="submit" name="Create User">
+            </form>
+            <div>
+                {{ form.errors }}
+            </div>
+            <div>
+                Already have an account? <a href="{% url 'login' %}">Login</a>
+            </div>
+        </div>         
+    </div>
+</section>
+
+{% endblock %}
