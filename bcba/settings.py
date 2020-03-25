@@ -84,29 +84,29 @@ WSGI_APPLICATION = 'bcba.wsgi.application'
 ### Comment out one of the below databases ###
 
 # Uses the LIVE DB Locally
-#DATABASES = {
- #   'default': {
- #           'ENGINE': 'django.db.backends.postgresql_psycopg2',
- #   }
-#}
+DATABASES = {
+   'default': {
+           'ENGINE': 'django.db.backends.postgresql_psycopg2',
+   }
+}
 
 # This below only relates to local development and can be commented out when pushing to production.
 #DATABASES['default'] = dj_database_url.config(default='postgres://tdekrodaycetkt:b79cc14eb1500dac8fd063291da7756127e33149fbb9cf3c0758c0faa869e664@ec2-18-213-176-229.compute-1.amazonaws.com:5432/de8545ja4u0a3d')
 
-#db_from_env = dj_database_url.config(conn_max_age=600)
-#DATABASES['default'].update(db_from_env)
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 # Uses the LOCAL DB Locally
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bcba',
-        'USER': 'postgres',
-        'PASSWORD': 'Theturtle1$',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'bcba',
+#        'USER': 'postgres',
+#        'PASSWORD': 'Theturtle1$',
+#        'HOST': '127.0.0.1',
+#        'PORT': '5432',
+#    }
+#}
 
 
 # Password validation
