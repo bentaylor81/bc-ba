@@ -91,7 +91,7 @@ DATABASES = {
 }
 
 # This below only relates to local development and can be commented out when pushing to production.
-#DATABASES['default'] = dj_database_url.config(default='postgres://tdekrodaycetkt:b79cc14eb1500dac8fd063291da7756127e33149fbb9cf3c0758c0faa869e664@ec2-18-213-176-229.compute-1.amazonaws.com:5432/de8545ja4u0a3d')
+DATABASES['default'] = dj_database_url.config(default='postgres://xurczkuelkilmc:24d098180170ce6662cceaa636fc5ad003c32b6e9c43ddb535fb05bf6e298fa8@ec2-3-211-48-92.compute-1.amazonaws.com:5432/d5qvb86an33ckb')
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
