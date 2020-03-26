@@ -162,7 +162,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 # Sendgrid Settings
 
-SEND_GRID_API_KEY = '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'
+SEND_GRID_API_KEY = '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'
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'ben_taylor'
 EMAIL_HOST_PASSWORD = 'Theturtle1$'
