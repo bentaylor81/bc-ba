@@ -121,6 +121,7 @@ footer .copyright { color: #fff; grid-column: 3; text-align: right; }
 
 /* Current Sponsors page */
 #current-sponsors { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-gap: 20px; }
+#current-sponsors img { max-width: 300px; }
 
 /* Contact Us Page */
 #contact form { display: grid; grid-template-columns: repeat(2, minmax(auto, 300px)); grid-gap: 20px;  }
