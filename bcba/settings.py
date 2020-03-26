@@ -77,6 +77,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bcba.wsgi.application'
 
+SECURE_SSL_REDIRECT = True
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
