@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'app_admins',
     'app_contacts',
     'app_users',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -172,3 +173,13 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'ben@gardentractorspares.co.uk'
 ACCOUNT_EMAIL_SUBJECT_PREFIX = 'Contact Email Message'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# S3 Buckets Config
+
+AWS_ACCESS_KEY_ID = 'AKIA2S2G377YZXYAO2GM'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'bcba'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
