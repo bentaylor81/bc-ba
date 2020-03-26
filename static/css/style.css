@@ -114,7 +114,7 @@ footer .copyright { color: #fff; grid-column: 3; text-align: right; }
 #meet-board .card { display: inline-block; padding: 10px 15px 15px 15px; margin-bottom: 20px; }
 #meet-board h3 { grid-column: 1/3; }
 #meet-board h3 .fa-linkedin { margin-left: 15px; font-size: 22px; color: #504e88; }
-#meet-board img { width: 215px; height: auto; float: left; margin-right: 15px; }
+#meet-board img { width: 215px; height: auto; float: left; margin-right: 15px; border: 5px solid #ddd; }
 #meet-board .card-content { line-height: 21px; padding: 0px; }
 
 /* Current Sponsors page */
