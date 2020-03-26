@@ -7,7 +7,7 @@ class board_members(models.Model):
     position = models.CharField(max_length=200, default='')
     profile = models.TextField(blank=True)
     linkedin = models.CharField(max_length=200, default='')
-    profile_pic = models.ImageField(upload_to="board", default="no-image.jpg", null=True, blank=True)
+    profile_pic = models.ImageField(upload_to="board", default="no-image-board.png", null=True, blank=True)
     priority = models.IntegerField()
     
     def __str__(self):
