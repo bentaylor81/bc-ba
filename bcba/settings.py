@@ -178,7 +178,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
 AWS_ACCESS_KEY_ID = 'AKIA2S2G377Y7UEZ4I65'
-AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_KEY')
+AWS_SECRET_ACCESS_KEY = ''
 AWS_STORAGE_BUCKET_NAME = 'bcba-v1'
 
 AWS_ACCESS_KEY_ID = 'storages.backends.s3boto3.S3Boto3Storage'
