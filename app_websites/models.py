@@ -7,7 +7,7 @@ class board_members(models.Model):
     position = models.CharField(max_length=200, default='')
     profile = models.TextField(blank=True)
     linkedin = models.CharField(max_length=200, default='')
-    profile_pic = models.ImageField(upload_to="board", default="no-image-board.png", null=True, blank=True)
+    profile_pic = models.ImageField(upload_to="img/board", default="img/board/no-image-board.png", null=True, blank=True)
     priority = models.IntegerField()
     
     def __str__(self):
@@ -35,7 +35,7 @@ class sponsors(models.Model):
     date_added = models.DateTimeField(auto_now_add=True) 
     date_edited = models.DateTimeField(auto_now=True) 
     sponsor_name = models.CharField(max_length=200, default='')
-    sponsor_logo = models.ImageField(upload_to="sponsors", default="no-image-sponsor.png", null=True, blank=True)
+    sponsor_logo = models.ImageField(upload_to="img/sponsors-links", default="img/sponsors-links/no-image-sponsors-links.png", null=True, blank=True)
     website = models.CharField(max_length=200, default='')
     
     def __str__(self):

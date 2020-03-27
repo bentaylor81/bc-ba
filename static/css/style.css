@@ -171,7 +171,6 @@ footer .copyright { color: #fff; grid-column: 3; text-align: right; }
 /* Media Queries - Screen size under 1200px */
 @media (max-width: 1200px) {
 	footer #footer { display: block; }
-	#showcase { height: 380px; }
 	#showcase h1 { font-size: 40px; }
 	#showcase p { font-size: 24px; }
 	#home-about { grid-template-columns: 1fr 1fr; }
@@ -191,7 +190,6 @@ footer .copyright { color: #fff; grid-column: 3; text-align: right; }
 }
 
 @media (max-width: 600px) {
-	#showcase { height: 320px; }
 	#showcase h1 { font-size: 34px; }
 	#showcase p { font-size: 20px; }
 	#showcase .btn { padding: 8px 40px; }

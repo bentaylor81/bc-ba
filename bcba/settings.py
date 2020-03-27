@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['bcba-v1.herokuapp.com', 'www.orizaba.co.uk', 'localhost']
 
@@ -78,7 +78,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bcba.wsgi.application'
 
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -154,7 +154,7 @@ STATICFILES_DIRS = [
         ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-django_heroku.settings(locals())
+
 
 # Media Files # 
 
@@ -176,10 +176,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # S3 Buckets Config
 
-AWS_ACCESS_KEY_ID = 'AKIA2S2G377YZXYAO2GM'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'bcba'
+AWS_ACCESS_KEY_ID = 'AKIA2S2G377Y7UEZ4I65'
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_KEY')
+AWS_STORAGE_BUCKET_NAME = 'bcba-v1'
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'   # Comment this out to use local static file. Uncomment to use static files on AWS.
+
+# For Environment Variables
+django_heroku.settings(locals())
