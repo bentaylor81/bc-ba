@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['bcba-v1.herokuapp.com', 'www.orizaba.co.uk', 'localhost']
 
@@ -78,7 +78,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bcba.wsgi.application'
 
-SECURE_SSL_REDIRECT = False
+SECURE_SSL_REDIRECT = config('SECURE_SSL_REDIRECT', default=True, cast=bool)
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -143,7 +143,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
@@ -154,8 +153,6 @@ STATICFILES_DIRS = [
         ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
-
 # Media Files # 
 
 MEDIA_URL = '/images/'
@@ -164,13 +161,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 # Sendgrid Settings
 
-# SEND_GRID_API_KEY = config('')
+SEND_GRID_API_KEY = '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'
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = 'ben_taylor'
+EMAIL_HOST_PASSWORD = 'O6LhuPlA4NY9'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = ''
+DEFAULT_FROM_EMAIL = 'ben@gardentractorspares.co.uk'
 ACCOUNT_EMAIL_SUBJECT_PREFIX = 'Contact Email Message'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
@@ -179,7 +176,7 @@ AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
 
-AWS_S3_FILE_OVERWRITE = False
+AWS_S3_FILE_OVERWRITE = True
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'   # Comment this out to use local static file. Uncomment to use static files on AWS.
