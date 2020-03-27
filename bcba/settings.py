@@ -104,7 +104,7 @@ DATABASES['default'].update(db_from_env)
 #        'ENGINE': 'django.db.backends.postgresql',
 #        'NAME': 'bcba',
 #        'USER': 'postgres',
-#        'PASSWORD': 'Theturtle1$',
+#        'PASSWORD': '',
 #        'HOST': '127.0.0.1',
 #        'PORT': '5432',
 #    }
@@ -166,11 +166,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 # SEND_GRID_API_KEY = config('')
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'ben_taylor'
-EMAIL_HOST_PASSWORD = 'Theturtle1$'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'ben@gardentractorspares.co.uk'
+DEFAULT_FROM_EMAIL = ''
 ACCOUNT_EMAIL_SUBJECT_PREFIX = 'Contact Email Message'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
@@ -178,7 +178,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
 AWS_ACCESS_KEY_ID = 'AKIA2S2G377Y7UEZ4I65'
-AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+# AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')#Doesn't work watch tutorial John Elder?
 AWS_STORAGE_BUCKET_NAME = 'bcba-v1'
 
 AWS_ACCESS_KEY_ID = 'storages.backends.s3boto3.S3Boto3Storage'
