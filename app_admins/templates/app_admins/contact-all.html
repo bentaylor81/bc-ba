@@ -25,14 +25,12 @@
                 <td><a href={% url 'view-contact' items.id %}>View</a></td>                
             </tr>
             {% endfor %} 
-        </table>
-             
-            {% else %}
-            <div>
-                There are currently no contacts
-            </div>            
-            {% endif %}            
-        </div>
+        </table>   
+        {% else %}
+        <div>
+            There are currently no contact emails
+        </div>            
+        {% endif %}            
     </div>
 </section>
 {% endblock %}

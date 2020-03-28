@@ -142,6 +142,7 @@ footer .copyright { color: #fff; grid-column: 3; text-align: right; }
 #register .messages { font-weight: bold; margin-bottom: 20px; }
 
 /* Admin General */
+body#admin { background: #000; }
 #admin header { background: #222; padding: 20px; }
 #admin header .logo { font-size: 40px; color: #fff; }
 #admin footer { display: block; }
