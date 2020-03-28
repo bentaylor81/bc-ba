@@ -1,0 +1,43 @@
+{% extends 'app_admins/admin-base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Messages Section -->
+<section>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
+<!-- Admin Meta -->
+<section>
+    <div class="content">
+        <h3>Administer Meta Data</h3>
+        <table cellpadding="0" cellspacing="0">   
+            {% if all_meta %}
+            <tr>
+                <td class="head">Meta Page</td>
+                <td class="head">Meta Title</td>
+                <td class="head">Edit Meta Data</td>
+            </tr>
+            {% for items in all_meta %}
+            <tr>
+                <td><b>{{ items.meta_page }}</b></td>
+                <td>{{ items.meta_title }}</td>
+                <td><a href={% url 'edit-meta' items.id %}>Edit</a></td>
+            </tr>
+            {% endfor %}   
+        </table>               
+            {% else %}
+                <div>
+                    There is  currently no meta
+                </div>            
+            {% endif %}            
+        </div>
+    </div>
+</section>
+{% endblock %}

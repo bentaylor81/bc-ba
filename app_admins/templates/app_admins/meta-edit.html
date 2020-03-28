@@ -1,0 +1,46 @@
+{% extends 'app_admins/admin-base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Messages Section -->
+<section>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
+<!-- Edit Sponsors Form Section-->
+<section>
+    <div class="content edit-meta">
+        <h3>Edit Meta Data</h3>
+        <div class="link">
+            <a href={% url 'all-meta' %}><< Back</a><br />
+        </div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %} 
+            <div>
+                <b>Page Path:</b> /{{ get_meta.meta_page }}/
+            </div>
+            <div>
+                Meta Title: <br />    
+                <input type="text" value="{{ get_meta.meta_title }}" name="meta_title"><br />
+            </div>
+            <div>
+                Meta Description: <br />
+                <textarea type="text" rows="6" cols="10" name="meta_description">{{ get_meta.meta_description }}</textarea>
+            </div>
+            <div>
+                Meta Keywords: <br />
+                <input type="text" value="{{ get_meta.meta_keywords }}" name="meta_keywords">
+            </div>
+            <br />
+            <button type="submit">Save</button>
+        </form>       
+    </div>
+</section>
+
+{% endblock %}

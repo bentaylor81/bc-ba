@@ -26,5 +26,8 @@ urlpatterns = [
     path('contacts/', views.contacts, name='contacts'),
     path('contacts/<list_id>', views.view_contact, name='view-contact'),
 
+    path('meta/', views.all_meta, name='all-meta'),
+    path('meta/edit/<list_id>', views.edit_meta, name='edit-meta'),
+
     path('<path>/delete/<list_id>', views.delete_item, name='delete-item'),
    ]

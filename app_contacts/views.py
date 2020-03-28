@@ -3,10 +3,14 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.template.loader import get_template
 from .models import contact
+from app_websites.models import meta
 from .forms import ContactForm
 from django.contrib import messages
 
 def contact(request):
+    context = { 
+        'meta_content' : meta.objects.filter(meta_page='contact'),
+        }
     if request.method == "POST":
         form = ContactForm(request.POST or None)
         if form.is_valid():
@@ -51,6 +55,6 @@ def contact(request):
             messages.error(request, ('There is an invalid field in the contact form, please try again.'))
             return redirect("/contact/")
     else:
-        return render(request, 'app_contacts/contact.html', {} )
+        return render(request, 'app_contacts/contact.html', context )
 
 

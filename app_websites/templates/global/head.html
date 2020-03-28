@@ -10,5 +10,9 @@
 	<script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 	<link href="https://fonts.googleapis.com/css?family=Catamaran&display=swap" rel="stylesheet">
-	<title>British Canadian Business Association</title>
+	{% for item in meta_content %}
+		<title>{{ item.meta_title }} | BC-BA</title>
+		<meta name="description" content="{{ item.meta_description }}">
+		<meta name="keywords" content="{{ item.meta_keywords }}">
+	{% endfor %}
 </head>

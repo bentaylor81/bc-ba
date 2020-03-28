@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from app_websites.models import board_members, corp_members, resources, pages, sponsors
+from app_websites.models import board_members, corp_members, resources, pages, sponsors, meta
 from app_contacts.models import contact
-from .forms import BoardmembersForm, CorpmembersForm, ResourcesForm, SponsorsForm, PagesForm
+from .forms import BoardmembersForm, CorpmembersForm, ResourcesForm, SponsorsForm, PagesForm, MetaForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from app_users.decorators import unauthenticated_user, allowed_users
@@ -129,7 +129,6 @@ def add_resource(request):
     else:   
         return render(request, 'app_admins/resource-add.html', {})  
 
-
 ### SECTION RELATING TO SPONSORS ###
 
 @login_required(login_url='login')
@@ -207,7 +206,32 @@ def contacts(request):
 @allowed_users(allowed_roles=['admin'])
 def view_contact(request, list_id):
     context = contact.objects.get(pk=list_id)
-    return render(request, 'app_admins/contact-view.html', { 'view_contact': context }) 
+    return render(request, 'app_admins/contact-view.html', { 'view_contact': context })
+
+### SECTION RELATING TO META DATA ###
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['admin'])
+def all_meta(request):
+    context = meta.objects.all().order_by('meta_page')
+    return render(request, 'app_admins/meta-all.html', { 'all_meta': context }) 
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['admin'])
+def edit_meta(request, list_id):
+    if request.method == 'POST':
+        get_meta = meta.objects.get(pk=list_id)
+        form = MetaForm(request.POST, request.FILES or None, instance=get_meta)
+        if form.is_valid():
+            form.save()
+            messages.success(request, ('Meta Data has been Edited'))
+            return redirect('all-meta')
+        else: 
+            messages.error(request, ('There is an Error Editing the Meta Data'))
+            return redirect(request, 'app_admins/meta-edit.html', {})
+    else:
+        get_meta = meta.objects.get(pk=list_id)
+        return render(request, 'app_admins/meta-edit.html', { 'get_meta': get_meta })
 
 ## GENERAL DELETE FUNCTION ###
 

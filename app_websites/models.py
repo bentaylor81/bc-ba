@@ -51,3 +51,12 @@ class pages(models.Model):
     
     def __str__(self):
         return self.page_name + ' | ' + self.url_path
+
+class meta(models.Model):
+    meta_title = models.CharField(max_length=200, default='British Canadian Business Association')
+    meta_description = models.CharField(max_length=2000, default='British Canadian Business Association')
+    meta_keywords = models.CharField(max_length=200, default='BC-BA')
+    meta_page = models.CharField(max_length=200, default='')
+
+    def __str__(self):
+        return self.meta_page + ' | ' + self.meta_title + ' | ' + self.meta_keywords

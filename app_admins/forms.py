@@ -1,5 +1,5 @@
 from django import forms
-from app_websites.models import board_members, corp_members, resources, sponsors, pages
+from app_websites.models import board_members, corp_members, resources, sponsors, pages, meta
 
 class BoardmembersForm(forms.ModelForm):
     class Meta:
@@ -25,3 +25,8 @@ class PagesForm(forms.ModelForm):
     class Meta:
         model = pages
         fields = ["content"]
+
+class MetaForm(forms.ModelForm):
+    class Meta:
+        model = meta
+        fields = ["meta_title", "meta_description", "meta_keywords"]

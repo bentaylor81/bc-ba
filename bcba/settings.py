@@ -161,13 +161,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 # Sendgrid Settings
 
-SEND_GRID_API_KEY = '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'
+SEND_GRID_API_KEY = config('SEND_GRID_API_KEY')
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'ben_taylor'
-EMAIL_HOST_PASSWORD = 'O6LhuPlA4NY9'
-EMAIL_PORT = 587
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'ben@gardentractorspares.co.uk'
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 ACCOUNT_EMAIL_SUBJECT_PREFIX = 'Contact Email Message'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
