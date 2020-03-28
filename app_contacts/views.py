@@ -16,8 +16,7 @@ def contact(request):
         if form.is_valid():
             form.save()
             messages.success(request, ('Your message has been sent, a member of our team will reply to you shortly.'))
-            first_name = request.POST.get("first_name")
-            last_name = request.POST.get("last_name")
+            name = request.POST.get("name")
             company = request.POST.get("company")
             position = request.POST.get("position")
             address = request.POST.get("address")
@@ -33,8 +32,7 @@ def contact(request):
             to_email = [settings.DEFAULT_FROM_EMAIL]
 
             context = {
-                'first_name': first_name,
-                'last_name': last_name,
+                'name': name,
                 'company': company,
                 'position': position,
                 'address': address,
