@@ -183,7 +183,7 @@ footer .copyright { color: #fff; grid-column: 3; text-align: right; }
 	footer .copyright { grid-column: 1; text-align: left;}
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 	header .mobile-icon, nav.mobile-menu { display: block; }
 	header .social, nav .top-nav { display: none; }
 	nav.mobile-menu #menu { display: none; }
