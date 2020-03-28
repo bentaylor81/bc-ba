@@ -193,8 +193,9 @@ footer .copyright { color: #fff; grid-column: 3; text-align: right; }
 }
 
 @media (max-width: 600px) {
-	#showcase h1 { font-size: 34px; }
-	#showcase p { font-size: 20px; }
+	header .header .logo img { width: 300px; }}
+	#showcase h1 { font-size: 30px; padding-top: 6rem; }
+	#showcase p { font-size: 16px; }
 	#showcase .btn { padding: 8px 40px; }
 	#page-showcase { height: 180px; }
 	#page-showcase h1 {	font-size: 32px; }	
