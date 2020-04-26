@@ -93,7 +93,7 @@ DATABASES = {
 }
 
 # This below only relates to local development and can be commented out when pushing to production.
-DATABASES['default'] = dj_database_url.config(default='postgres://xurczkuelkilmc:24d098180170ce6662cceaa636fc5ad003c32b6e9c43ddb535fb05bf6e298fa8@ec2-3-211-48-92.compute-1.amazonaws.com:5432/d5qvb86an33ckb')
+DATABASES['default'] = dj_database_url.config(default='postgres://bsbzcuvyaylnwk:3420f1c7ffb29a60ebbeb315bf0c500805fc64288432c6436a8f05401392a6de@ec2-50-17-90-177.compute-1.amazonaws.com:5432/dammnfuc77s5ff')
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
@@ -179,7 +179,7 @@ AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_FILE_OVERWRITE = True
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'   # Comment this out to use local static file. Uncomment to use static files on AWS.
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'   # Comment this out to use local static file. Uncomment to use static files on AWS.
 
 # For Environment Variables
 django_heroku.settings(locals())
