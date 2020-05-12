@@ -84,9 +84,9 @@ footer .copyright { color: #fff; grid-column: 3; text-align: right; }
 #showcase p a { margin-bottom: 105px; }
 #showcase #slider  { display: none; }
 #showcase #slider.show { display: inline; }
-#showcase .slider1 { background: url('../img/slider/image-1.jpg') no-repeat 0% 50%; }
-#showcase .slider2 { background: url('../img/slider/image-2.jpg') no-repeat 0% 50%; }
-#showcase .slider3 { background: url('../img/slider/image-3.jpg') no-repeat 0% 50%; }
+#showcase .slider1 { background: url('../img/slider/temp-1.jpg') no-repeat 0% 50%; }
+#showcase .slider2 { background: url('../img/slider/temp-2.jpg') no-repeat 0% 50%; }
+#showcase .slider3 { background: url('../img/slider/temp-3.jpg') no-repeat 0% 50%; }
 
 /* Homepage - About Us */
 #home-about { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; grid-column-gap: 20px; }
