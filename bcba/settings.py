@@ -27,8 +27,9 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
-
-ALLOWED_HOSTS = ['bcba-v1.herokuapp.com', 'www.orizaba.co.uk', 'localhost']
+PREPEND_WWW = True
+BASE_URL = "https://www.bc-ba.com"
+ALLOWED_HOSTS = ['bcba-v1.herokuapp.com', 'www.bc-ba.com', 'bc-ba.com', 'localhost']
 
 # Application definition
 
@@ -108,10 +109,6 @@ DATABASES['default'].update(db_from_env)
 #        'PORT': '5432',
 #    }
 #}
-
-# WWW and non WWW.
-PREPEND_WWW = True
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
