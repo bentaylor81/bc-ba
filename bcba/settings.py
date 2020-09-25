@@ -30,6 +30,8 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['bcba-v1.herokuapp.com', 'www.orizaba.co.uk', 'localhost']
 
+# WWW and non WWW.
+PREPEND_WWW = True
 
 # Application definition
 
