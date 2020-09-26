@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'bc-ba.middleware.WwwRedirectMiddleware',
+    #'bc-ba.middleware.WwwRedirectMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware', # Comment this out when working locally. Uncomment when deploying to show static files.
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
