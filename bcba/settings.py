@@ -27,8 +27,8 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
-PREPEND_WWW = True
-BASE_URL = "https://www.bc-ba.com"
+# PREPEND_WWW = True
+# BASE_URL = "https://www.bc-ba.com"
 ALLOWED_HOSTS = ['bcba-v1.herokuapp.com', 'www.bc-ba.com', 'bc-ba.com', 'localhost']
 
 # Application definition
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'bc-ba.middleware.WwwRedirectMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware', # Comment this out when working locally. Uncomment when deploying to show static files.
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
