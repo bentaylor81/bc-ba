@@ -94,7 +94,8 @@ DATABASES = {
 }
 
 # This below only relates to local development and can be commented out when pushing to production.
-# DATABASES['default'] = dj_database_url.config(default='postgres://bsbzcuvyaylnwk:3420f1c7ffb29a60ebbeb315bf0c500805fc64288432c6436a8f05401392a6de@ec2-50-17-90-177.compute-1.amazonaws.com:5432/dammnfuc77s5ff')
+# HEROKU_DB_KEY = config('HEROKU_DB_KEY')
+# DATABASES['default'] = dj_database_url.config(default=HEROKU_DB_KEY)
 
 # db_from_env = dj_database_url.config(conn_max_age=600)
 # DATABASES['default'].update(db_from_env)
